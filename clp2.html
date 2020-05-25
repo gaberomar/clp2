@@ -3,15 +3,34 @@
 
 
 
-
 <script>
 function getParam ( sname )
 {
-	var params = location.search.substr(location.search.indexOf("?")+1);
-	var sval =  params.replace("sv=", "");
-	return sval;
+var params = location.search.substr(location.search.indexOf("?")+1);
+var sval =  params.replace("sv=", "&amp;");
+
+return sval;
 }
-var sv = getParam("sv");
+
+function removeloto() {
+var elem = document.getElementById('videojs');
+elem.parentNode.removeChild(elem);
+return false;
+}
+
+function getParameterByName(name, url) {
+if (!url) url = window.location.href;
+name = name.replace(/[\[\]]/g, "\\$&amp;");
+var regex = new RegExp("[?&amp;]" + name + "(=([^&amp;#]*)|&amp;|#|$)"),
+results = regex.exec(url);
+if (!results) return null;
+if (!results[2]) return '';
+return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
+var sv = getParameterByName("sv");
+
 </script>
 <html>
 <head><script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js" type="text/javascript"></script>
