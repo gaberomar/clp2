@@ -29,10 +29,9 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 <script src="https://futemax.tv/js/qenginev2.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
 </head>
-<body>
+ <body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;"> 
 <div id="player">
 </div>
-
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
 var playerElement = document.getElementById("player");
 var player = new Clappr.Player({
