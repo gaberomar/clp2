@@ -30,7 +30,11 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
 </head>
  <body onselectstart="return false" oncontextmenu="return false" ondragstart="return false" onMouseOver="window.status='..message perso .. '; return true;"> 
-<div id="player">
+<script type="text/javascript">
+            var cu_player = '<video controls="" height="'+$('div#player_custom_min').innerHeight() +'" poster="" src="{src}" width="100%"></video>'
+            var mdm = new MobileDetect(window.navigator.userAgent);
+        </script>
+   <div id="player">
 </div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
 var playerElement = document.getElementById("player");
