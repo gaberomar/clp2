@@ -20,8 +20,7 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
 -->
 </script>
 <script src="//cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-<script src="//cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-<script src="https://cdn.jsdelivr.net/clappr.rtmp/latest/rtmp.min.js" type="text/javascript"></script>  
+<script src="//cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script> 
 <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>  
 <script src='https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js' type='text/javascript'/>
 <script src="https://futemax.tv/js/qenginev2.js"></script>
@@ -40,7 +39,7 @@ width: '100%',
                 mediacontrol: {seekbar: "#06CE1D", buttons: "#FFFFFF"},  
                 stretching: 'exactfit',
 
-     plugins: [DashShakaPlayback, LevelSelector],
+     plugins: [DashShakaPlayback, LevelSelector, LevelSelectorPlugin],
          shakaConfiguration: {
             preferredAudioLanguage: 'pt-BR',
             streaming: {
@@ -78,7 +77,7 @@ body {
 }
 
 .media-control[data-media-control] .media-control-background[data-background]::before {
-    font-size: 2vw;
+    font-size: 2.5vw;
     color: #fff;
     text-align: center;
     font-family:Changa,"Segoe UI";
