@@ -28,37 +28,32 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
     <style>
 body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{font-family:Verdana,Arial,Helvetica,sans-serif}.player_div{width:500px;height:400px;position:relative;display:block;z-index:100}#Player{width:100%!important;height:100%!important}#error-message{color:transparent;width:100%;height:100%;background:#000;text-align:center;vertical-align:middle;background-size:contain;background-repeat:no-repeat;position:absolute;top:0;left:0;z-index:100;display:none}#error-message h2,#error-message p{font-weight:700;color:#fff;text-shadow:1px 1px #fff}#error-message h2{margin-top:15%;font-size:120%}#unmute{display:none;z-index:2147483647;color:#fff;position:absolute;bottom:60px;right:40px;width:200px;border:2px solid #fff;text-align:center;padding:4px 0;border-radius:2px;cursor:pointer;opacity:.8}#unmute:hover{opacity:1}
     </style>
-<div  class="video-container" id="video-container" >
- <script type="7fd48e4e9b637a138f663eba-text/javascript">
-var playerElement = document.getElementById("video-container");
-    				var player = new Clappr.Player({
-				source: sv,
-				watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
-        			baseUrl: "http://www.koraglive.ml/",
-				autoPlay: "true",
-    				mediacontrol: {seekbar: "#f60b0b", buttons: "#ffffff"},
-				width: "100%",
-                                height: "100%",
-				plugins: 
-				 [DashShakaPlayback, LevelSelector]
-				,
-				hlsjsConfig: {
-				 xhrSetup: function(xhr, url) {
-				  xhr.withCredentials = false;
-				 }
-				},
-				maxBufferLength: "20",
-				parentId: "#video-container"});
-  				function resizePlayer(){
-    				var aspectRatio = 9/16,
-    				newWidth = document.getElementById("video-container").parentElement.offsetWidth,
-    				newHeight = 2 * Math.round(newWidth * aspectRatio/2);
-    				player.resize({width: newWidth, height: newHeight});
- 				}
-  				resizePlayer();
-  				window.onresize = resizePlayer; 
-  				</script> 
+<div id="player">
+</div>
 
+<script type="7fd48e4e9b637a138f663eba-text/javascript">
+
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+ height: "100%",
+ width: "100%",
+watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
+plugins: [DashShakaPlayback, LevelSelector],		
+ hlsjsConfig: {
+ p2pConfig: {
+            wsSignalerAddr: 'wss://cdg3.edge.tmed.pw',
+        
+        },
+ xhrSetup: function(xhr, url) {
+  xhr.withCredentials = false;
+ }
+ 
+ }
+});
+player.attachTo(playerElement);
+player.load({ source: sv, mimeType: 'application/vnd.apple.mpegurl'});
+player.play();
+</script>
 <link href="http://raw.githack.com/gaberomar/tube.css/master/tube.css" rel="stylesheet"></link>
 <script data-cf-settings="7fd48e4e9b637a138f663eba-|49" defer="" src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"></script>
 <script type="text/javascript">(function(){window['__CF$cv$params']={r:'58aabf06ed6cedbb',m:'a4594c322560271b4166504730b9a5056ecd18a4-1588013605-1800-Adfpbq1JryTLWWAlCLgSxOqTuTRPs3E7ilOOpJIf1I9Ej4GPPpjkfdmTAsYAeQbOxrS55Qc1rpaUkB+JkFNnnRUxS/lLG6DniL7PpuBmwAMYeztdUTh9eEBvH7iCt8brDnSGLCVtlQ22K3vB6+UKVs81pHakjTVAaE8DagOKez2r',s:[0x6f3f8fd586,0x7ca20708b9],fb:0,}})();</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'5975de650a6c08a7',m:'ac65a7fe8dcf93c0cc97b7690d3d725754acfbeb-1590143499-1800-AQxfqLZinoWmwMhUglhDu0AGzyLQ2x/GT8lPBvmnG5GNbAFzOCOhiOJqZDvpPHhP+xOsC6y9tgPt1Df610sIoJQUzc5pfj/pKxGy2iPe/zwX9v1ym8ga5wU1X3d9HhHw/mb7rqASchabPDl9zJxVeLY=',s:[0x3f9cc4276c,0x2df056895d],}})();</script>
