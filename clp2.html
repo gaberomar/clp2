@@ -30,20 +30,20 @@ body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{f
     </style>
 <div id="player">
 </div>
-
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
-
 var playerElement = document.getElementById("player");
 var player = new Clappr.Player({
  height: "100%",
  width: "100%",
 watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
-plugins: [DashShakaPlayback, LevelSelector],		
+plugins: [DashShakaPlayback, LevelSelector],
+maxBufferLength: "20",		
  hlsjsConfig: {
  p2pConfig: {
             wsSignalerAddr: 'wss://cdg3.edge.tmed.pw',
         
         },
+
  xhrSetup: function(xhr, url) {
   xhr.withCredentials = false;
  }
