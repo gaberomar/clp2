@@ -29,20 +29,22 @@ if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i
    <style>
 body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{font-family:Verdana,Arial,Helvetica,sans-serif}.player_div{width:500px;height:400px;position:relative;display:block;z-index:100}#Player{width:100%!important;height:100%!important}#error-message{color:transparent;width:100%;height:100%;background:#000;text-align:center;vertical-align:middle;background-size:contain;background-repeat:no-repeat;position:absolute;top:0;left:0;z-index:100;display:none}#error-message h2,#error-message p{font-weight:700;color:#fff;text-shadow:1px 1px #fff}#error-message h2{margin-top:15%;font-size:120%}#unmute{display:none;z-index:2147483647;color:#fff;position:absolute;bottom:60px;right:40px;width:200px;border:2px solid #fff;text-align:center;padding:4px 0;border-radius:2px;cursor:pointer;opacity:.8}#unmute:hover{opacity:1}
     </style>
-<div  class="video-container" id="video-container" >
+<div id="player">
+</div>
 <script type="7fd48e4e9b637a138f663eba-text/javascript">
-var playerElement = document.getElementById("video-container");
+var playerElement = document.getElementById("player");
 var player = new Clappr.Player({
 source:sv,
 width: '100%',
                 height: "100%",
+                watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
                 autoPlay: true,
-                mediacontrol: {seekbar: "#09d0fb", buttons: "#09d0fb"},
+                mediacontrol: {seekbar: "#09d0fb", buttons: "#09d0fb"},  
                 stretching: 'exactfit',
+
      plugins: [DashShakaPlayback, LevelSelector],
-      watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
          shakaConfiguration: {
-            preferredAudioLanguage: 'pt-BR'
+            preferredAudioLanguage: 'pt-BR',
             streaming: {
   rebufferingGoal: 6,
   bufferingGoal: 2,
@@ -52,20 +54,20 @@ width: '100%',
     baseDelay: 200,
     backoffFactor: 4,
     fuzzFactor: 0.5,
-  
   }
 }
          },
           shakaOnBeforeLoad: function(shaka_player) {
             // shaka_player.getNetworkingEngine().registerRequestFilter() ...
           },
-          parentId: '#video-container'
+          parentId: '#player'
         });
           
     </script>
+
+
 <link href="http://raw.githack.com/gaberomar/tube.css/master/tube.css" rel="stylesheet"></link>
-<div 0="" id="playe&lt;body style=" margin:="" padding:="">
-<a href="http://raw.githack.com/gaberomar/clp2/master/clp2.html" target="_blank"></a>
+
 <script>
   function errorPlaying(){
     location.href = "http://raw.githack.com/gaberomar/clp2/master/clp2.html";
