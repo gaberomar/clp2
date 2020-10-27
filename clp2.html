@@ -1,0 +1,102 @@
+﻿
+<meta name="referrer" content="no-referrer">
+<style>html,body{margin:0;padding:0;background:#FFF;width: 100%;height: 100%;}</style> 
+<script type="7fd48e4e9b637a138f663eba-text/javascript">
+function getParam ( sname )
+{
+ var params = location.search.substr(location.search.indexOf("?")+1);
+ var sval =  params.replace("sv=", "");
+ return sval;
+}
+var sv = getParam("sv");
+</script>
+    <meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js" type="7fd48e4e9b637a138f663eba-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js" type="7fd48e4e9b637a138f663eba-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="7fd48e4e9b637a138f663eba-text/javascript"></script> 
+        <script src="https://futemax.tv/js/qenginev2.js" type="7fd48e4e9b637a138f663eba-text/javascript"></script> 
+        <script src="https://unpkg.com/axios/dist/axios.min.js" type="7fd48e4e9b637a138f663eba-text/javascript"></script> 
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="7fd48e4e9b637a138f663eba-|49" defer=""></script>
+  <style>
+body,html{margin:0;padding:0;width:100%;height:100%;background-color:#000}html{font-family:Verdana,Arial,Helvetica,sans-serif}.player_div{width:500px;height:400px;position:relative;display:block;z-index:100}#Player{width:100%!important;height:100%!important}#error-message{color:transparent;width:100%;height:100%;background:#000;text-align:center;vertical-align:middle;background-size:contain;background-repeat:no-repeat;position:absolute;top:0;left:0;z-index:100;display:none}#error-message h2,#error-message p{font-weight:700;color:#fff;text-shadow:1px 1px #fff}#error-message h2{margin-top:15%;font-size:120%}#unmute{display:none;z-index:2147483647;color:#fff;position:absolute;bottom:60px;right:40px;width:200px;border:2px solid #fff;text-align:center;padding:4px 0;border-radius:2px;cursor:pointer;opacity:.8}#unmute:hover{opacity:1}
+    </style>
+</head>
+<body onload="init()">
+<div id="player">
+</div>
+ <script type="7fd48e4e9b637a138f663eba-text/javascript">
+ var playerElement = document.getElementById("player");
+ var player = new Clappr.Player({
+ parentId: "#Player",
+ source: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
+ width: '100%',
+ height: "100%",
+ autoPlay: true,
+ watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
+ mediacontrol: {seekbar: "#09d0fb", buttons: "#09d0fb"},  
+ stretching: 'exactfit',
+ plugins: [DashShakaPlayback, LevelSelector],
+ shakaConfiguration: {
+ preferredAudioLanguage: 'pt-BR',
+  abr: { 
+                        defaultBandwidthEstimate: 50000
+                    },
+ streaming: {
+   rebufferingGoal: 2,
+                        bufferingGoal: 4,
+                        startAtSegmentBoundary: true,
+                        retryParameters: {
+                            timeout: 3000,
+                            maxAttempts: 128,
+                            baseDelay: 200,
+                            backoffFactor: 4,
+                            fuzzFactor: 0.5,
+  }
+}
+      },
+          shakaOnBeforeLoad: function(shaka_player)
+ {
+ const smart = navigator.userAgent.match(/.+SmartTV.+/);
+ if(smart) {
+                        return; }
+            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
+           },
+          parentId: '#player'      
+
+        });
+         player.on(Clappr.Events.PLAYER_STOP, playerStop);
+            function playerStop(){
+             location.reload();
+ const qengine = new qEngine();
+                    shaka.getNetworkingEngine().registerRequestFilter(qengine.ReqFilter.bind(qengine));
+                    shaka.getNetworkingEngine().registerResponseFilter(qengine.ResFilter.bind(qengine));
+            }
+            player.setVolume(100); // 1%
+            player.play();
+ 
+    </script>
+</div>
+<link href="http://raw.githack.com/gaberomar/tube.css/master/tube.css" rel="stylesheet"></link>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="7fd48e4e9b637a138f663eba-|49" defer=""></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
