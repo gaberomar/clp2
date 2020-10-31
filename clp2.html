@@ -96,7 +96,40 @@ command: 'video/m3u8',
 
 </div>
 <style>
-* {
+ body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.twitter-widget {
+    z-index: 70;
+    right: 10px;
+    transition: all .3s;
+    position: absolute;
+    top: 10px;
+}
+
+.media-control[data-media-control] .media-control-background[data-background]::before {
+    font-size: 2.5vw;
+    color: #fff;
+    text-align: center;
+    font-family:Changa,"Segoe UI";
+    font-weight: bold;
+content: "شاهد جمبع المبارايات علي موقع  |  كوره جي لايف";
+}
+
+.media-control[data-media-control] .media-control-background[data-background] {
+    opacity: 1!important;
+}
+.media-control[data-media-control] .media-control-background[data-background] {
+    height: 25%!important;
+}
+
+.media-control[data-media-control] .media-control-layer[data-controls]{height:25px!important;background-color:rgba(0,0,0,.31)}.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-14px}
+.container[data-container] span{display:none}
+ 
+{
   margin: 0;
   padding: 0;
 }
