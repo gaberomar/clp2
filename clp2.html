@@ -51,6 +51,7 @@ html
                plugins: [LevelSelector, DashShakaPlayback], 
                 parentId: '.player', 
                 autoPlay: true, 
+                html5m3u8:true,
                 mute: false, 
                 hideVolumeBar: true, 		
                 width: '100%', 
@@ -61,15 +62,9 @@ html
                 maxBufferSize: 0,      
                 maxBufferLength: 10,   
                 liveSyncDurationCount: 5,  
-                p2pConfig: {
-                 logLevel: 'debug',
-                logLevel: 'debug',
-	live: true,					
-	wsSignalerAddr: 'wss://signal.hdtvcloud.com',					
-	announce: "https://tracker.hdtvcloud.com/v1",        					
-                             
-                 }  }
-             },
+               debug: true,
+                }
+              },
           }) 
               
       p2pml.hlsjs.initClapprPlayer(player); 
