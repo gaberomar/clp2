@@ -24,10 +24,16 @@ var sv = getParam("sv");
 <div  class="player" onclick="pon();"></div> 
 
     <script>
-
-   if (p2pml.hlsjs.Engine.isSupported()) { 
-                var engine = new p2pml.hlsjs.Engine(); 
-function playM3u8(url, license){   
+      
+    ref = document.referrer;
+match = false;
+if (ref.match(/^https?:\/\/([^\/]+\.)?koraglive\.cf(\/|$)/i)) 
+  match = true;
+if(match);
+   if (p2pml.hlsjs.Engine.isSupported()) {
+            var engine = new p2pml.hlsjs.Engine({
+});
+function playM3u8(url, license){  
                 var player = new Clappr.Player({ 
                source: sv,
                 watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
