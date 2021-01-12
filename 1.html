@@ -1,4 +1,4 @@
-﻿ <html>
+﻿<html>
 <head>
   <title>Reproductor M3U8 & MPD Player</title>
 
@@ -61,12 +61,21 @@ if(match);
                liveSyncDurationCount: 9, 
               initialLiveManifestSize: 3, 
              } ,  },
-          events: {	
-          onError: function (e) 
-           { 
-           errbox();
-                },  
-               } 
+          shakaOnBeforeLoad: function(shaka_player) {    
+  if (P2PEngineShaka.isSupported()) { 
+   new P2PEngineShaka(shaka_player), {
+        logLevel: 'debug',           
+}
+         
+}
+
+},  
+events: {	
+onError: function (e) 
+{ 
+errbox();
+ } 
+      },      
              }) 
   p2pml.hlsjs.initClapprPlayer(player); 
   document.title = "Reproduciendo: " +url;
