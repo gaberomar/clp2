@@ -31,14 +31,14 @@ if(match);
             var engine = new p2pml.hlsjs.Engine({
      });
    function playM3u8(url, license){ 
-               var player = new Clappr.Player({ 
-               source: sv,
-                   height: '100%',
-                 width: '100%',
-                 parentId: "#player",
-                 autoPlay: true,
-                 hideVolumeBar: true, 
-                buffering: 'true', 
+              var player = new Clappr.Player({ 
+              source: sv,
+              parentId: '.player', 
+              autoPlay: true,  
+              hideVolumeBar: true, 		
+              width: '100%', 
+              height: '100%',  
+              buffering: 'true', 
               watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
               mediacontrol: {seekbar: "#f2b804", buttons: "#f2b804"},
              plugins: [LevelSelector,  DashShakaPlayback],
