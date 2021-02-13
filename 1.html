@@ -1,7 +1,18 @@
 
+
 <html>
 <head>
   <title>Reproductor M3U8 & MPD Player</title>
+<style id='page-skin-1' type='text/css'><!--
+*{margin:0; padding:0; }
+#player{width: 100vw; height: 100vh;}
+
+--></style>
+	<style>/*<![CDATA[*/
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+  body *{font-family: 'Tajawal', sans-serif!important}
+/*]]>*/</style> 
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>  
   <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js" type="text/javascript"></script> 
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
@@ -50,9 +61,9 @@ segments: {
               width: '100%', 
               height: '100%',  
               buffering: 'true', 
-              watermark: "https://1.bp.blogspot.com/-JfWb2LWM2_M/Xqt1muzh4CI/AAAAAAAAI1I/mHIUUcGGnMMQ_nrZ-1lfIeMoRM2OpLmBQCK4BGAYYCw/s1600/logo1.png", position: 'top-right',
+              watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", position: 'bottom-left',
               mediacontrol: {seekbar: "#f2b804", buttons: "#f2b804"},
-             plugins: [LevelSelector,  DashShakaPlayback],
+             plugins: [LevelSelector, ErrorPlugin, Clappr.FlasHLS,  DashShakaPlayback],
             playback: {
                hlsjsConfig: { 
              enableWebVTT: false,
@@ -69,7 +80,19 @@ onError: function (e)
 { 
 errbox();
  } 
-      },      
+      },
+
+ errorPlugin: {
+                 timeToExpires: 2,
+              onRetry: function(e) {
+                player.configure({
+                   source: sv,
+              autoPlay: true,
+
+                   });
+                  }
+                }
+      
              }) 
   p2pml.hlsjs.initClapprPlayer(player); 
   document.title = "Reproduciendo: " +url;
@@ -89,19 +112,32 @@ errbox();
  }
   player.setVolume(100); // 1%
                player.play();
-  
+   (function(open){XMLHttpRequest.prototype.open=function(method,url,async,user,pass){if(url.indexOf('serve.key') != -1){rewrittenUrl = url.replace("https", "https://netnr-proxy.openode.io/https");}else{rewrittenUrl=url;}
+open.call(this,method,rewrittenUrl,async,user,pass);};})(XMLHttpRequest.prototype.open);
     </script>
   </div>
- <style>/*<![CDATA[*/ body{background:#000;font-family:sans-serif;margin:0} *{text-decoration:none} .videos-channel{position:absolute;z-index:999;left:10px;top:10px;right:10px;height:0} .videos-channel .button{background:#552a86;cursor:pointer;font-size:14px;float:left;display:block;border-radius:4px;height:25px;text-align:center;line-height:22px;text-shadow:0 1px 1px #000;color:#fff;padding:0 10px;font-family:sans-serif;font-weight:bold;position:relative;z-index:99} .videos-channel .refresh{float:right} #share_channel{position:absolute;top:-10px;z-index:9;left:-10px;border-radius:0;background:rgba(0,0,0,0.69);right:-10px;bottom:0;height:100vh;text-align:center} .share-channel{position:absolute;top:50%;right:0;left:0;margin-top:-50px} .share-channel textarea{margin-top:20px;border-radius:4px;border:0;max-width:350px;width:100%;direction:ltr;height:45px;overflow:hidden;font-size:11px;} .site-link{text-shadow:2px 2px 2px #000;z-index:1;bottom:18%;position:fixed;width:100%;height:0%;text-align:center;color:#fff;font-size:2vw;display:none1} .jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#fff;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"في حالة توقف القناة اضغط على زرار تحديث";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:4vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 100%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; } body#body { height: 100%; float: right; width: 100%; } a.asfarx { left: 0; padding: 3px; position: fixed; top: 3px; z-index: 99; background: #F44336; border: unset; border-radius: 4px; color: #fff; font-size: 11px; padding: 4px; font-family: tahoma; line-height: 10px; height: 20px; } button#roload:before, button#roload:after { position: absolute; left: 48%; top: 46%; transform: translateX(-50%) translateY(-50%); width: 55px; height: 30px; display: block; } button#roload:before { z-index: 0; background: #ff00007a; animation: pulse-border 1.5s ease-out infinite; border-radius: 5px; } button#roload:after { z-index: 1; border-radius: 5px; transition: all .2s; } @keyframes pulse-border { 0% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1); opacity: 1 } 100% { transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5); opacity: 0 } } .fxr { z-index: 199px; } .aslc { z-index: 1; } .fxl { z-index: 10; } .aslc { position: fixed; top: 5px; font-size: smaller; left: 0; color: #fff; z-index: 9999; width: 100%; text-align: center; } div#closeads { position: absolute; top: -30px; right: 0; color: #E91E63; } video { position: relative; } a.embed { position: absolute; top: 6px; left: 4px; } a.embed { position: fixed; top: 0; left: 4px; } body { margin: 0 !important; } button.plyr__control[data-plyr="fullscreen"] { } .plyr { border-radius: 4px; margin-bottom: 15px; } .container { margin: 20px auto; max-width: 560px; text-align: center; } .container .plyr__control--overlaid { padding: 30px; background: rgba(205, 36, 47, 0.8); } .container .plyr__control--overlaid:hover { background: #cd242f !important; } .container .plyr__control:hover { background: #cd242f !important; } .container .plyr__volume input, .container .plyr__progress input { color: #cd242f !important; } .fxl { position: fixed; left: 4px; top: 3px; z-index: 99; background: #F44336; border: navajowhite; border-radius: 4px; color: #fff; font-size: 11px; padding: 4px; } .fxr { position: fixed; right: 4px; top: 3px; z-index: 99; background: #F44336; border: navajowhite; border-radius: 4px; color: #fff; font-size: 11px; padding: 4px; } .video-con { display: grid; width: 100%; height: 100%; } .plyr__video-wrapper { height: 100% !important; width: 100% !important; } .container { width: 100% !important; max-width: 100% !important; height: 100% !important; } .plyr { margin: 0 !important; height: 100% !important; width: 100% !important; border-radius: 0 !important; } video { height: 100% !important; width: 100% !important; float: right; } div#player { width: 100% !important; height: 100% !important; } .ads { overflow: hidden; } div#main { float: right; width: 100%; height: 100%; } div#Blog1 { height: 100%; width: 100%; } html, body { height: 100%; width: 100%; } .player-container { width: 100%; height: 100%; } video { object-fit: contain; } /*]]>*/</style>
-<style> a.button.refresh { display: none; }</style>
 <style>
 /* <![CDATA[ */
 
-@font-face {  font-family: 'Cairo'; font-style: normal; font-weight: 300;
-src: local('Cairo Light'), local('Cairo-Light'), url(https://fonts.gstatic.com/s/cairo/v2/fgBJt-qyQFuORpzrx3mX4hTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
-  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE80-FEFC;}
-body { overflow: hidden; height: 100%; margin: 0px; padding: 0px; } .twitter-widget { z-index: 70; right: 10px; transition: all .3s; position: absolute; top: 10px; } .media-control[data-media-control] .media-control-background[data-background]::before { font-size: 2.2vw; color: #fff; text-align: center; font-family: Cairo, "Helvetica Neue", sans-serif; font-weight: bold; content: "شاهد جمبع المبارايات علي موقع  |  كوره جي لايف"; } .media-control[data-media-control].media-control-hide .media-control-background[data-background] { opacity: 1!important; } .media-control[data-media-control] .media-control-background[data-background] { height:22%!important; } .media-control[data-media-control] .media-control-layer[data-controls]{height:25px!important;background-color:rgba(0,0,0,.31)}.media-control[data-media-control] .media-control-layer[data-controls] .bar-container[data-seekbar]{top:-14px} .container[data-container] span{display:none} 
-#showshare1 {
+[data-watermark] img { max-width: 170%!important; }
+ 
+[data-watermark-bottom-left] {
+    bottom: 16px!important;
+    left: 10px!important;} 
+
+[data-watermark] img { max-width: 100%!important; }
+[data-watermark] {width: 22%!important;}
+  
+jw-controls.jw-reseth:before{content:'';z-index:9;position:absolute;right:0;left:0;bottom:7%;font-family:sans-serif;color:#c9c7c7;text-align:center;text-shadow:2px 2px 2px #000;font-size:2vw} #player{position:absolute;height:100%!important;z-index:9;right:0;left:0;} .jw-slider-time.jw-background-color.jw-reset.jw-slider-horizontal.jw-reset,.jwplayer.jw-flag-rightclick-open .jw-rightclick,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-rewind,.jw-icon.jw-icon-inline.jw-text.jw-reset.jw-text-elapsed,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-svg-icon,.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-cc.jw-settings-submenu-button.jw-off .jw-reset-text.jw-tooltip.jw-tooltip-captions,#matchpsho,.postimg,.post-body p{display:none!important} /*.jw-error-text.jw-reset-text,body .jwplayer.jw-state-error .jw-error-msg .jw-icon{display:none!important} .jw-preview.jw-reset{background-color:#000!important;} .jw-error-msg.jw-info-overlay.jw-reset:before{content:"في حالة توقف القناة اضغط على زرار تحديث";font-family:sans-serif;}*/ .jw-text-live::before{height:6px;width:6px;background-color:#f00} .jw-text-live.jw-dvr-live{box-shadow:initial} .jw-text-live.jw-dvr-live::before{background-color:currentColor;} iframe.cf{position:absolute;height:100%} .cf.videoif,{z-index:99;} iframe.videoif{height:100%;position:absolute} @media screen and (max-width:500px){ .jw-controls.jw-reset:before{font-size:2vw} } .plyr { position: unset !important; } .play-wrapper svg { width: 40px !important; } .player-poster[data-poster] { background-size: 100% !important; } div#Blog1 { float: right; width: 100%; height: 100%; } .video-b { height: 100%; float: right; width: 100%; } .video-p { height: 100%; float: right; width: 100%; } div#watch_dl { height: 100%; float: right; width: 100%; } .clear-post-body { height: 90%; float: right; width: 100%; } article.post.hentry { height: 100%; float: right; width: 100%; } .posts-wrapper { height: 100%; float: right; width: 100%; }
+   .
+
+/*]]>*/</style>
+
+<style>
+/* <![CDATA[ */
+
+	body { overflow: hidden; height: 100%; margin: 0px; padding: 0px; } .twitter-widget { z-index: 70; right: 10px; transition: all .3s; position: absolute; top: 10px; }
+	#showshare1 {
     position: fixed;
     right: 0;
     width: 100%;
