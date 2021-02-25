@@ -22,12 +22,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
   body *{font-family: 'Tajawal', sans-serif!important}
 /*]]>*/</style>
-
  <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js" type="9b4a0eef185ae9cf432bc0fb-text/javascript"></script>
  <script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js" type="9b4a0eef185ae9cf432bc0fb-text/javascript"></script>
  <script src="https://cdn.jsdelivr.net/npm/clappr@latest" type="9b4a0eef185ae9cf432bc0fb-text/javascript"></script>
  <script src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js" type="9b4a0eef185ae9cf432bc0fb-text/javascript"></script>
- 
 <script type="text/javascript">
 function getParam ( sname )
 {
@@ -62,16 +60,16 @@ var sv = getParam("sv");
            buttons: "#f2b804"
                           },     
  plugins: [LevelSelector, ErrorPlugin, Clappr.FlasHLS], 
-     events: {
-              //onError: function(e) { errorPlaying() }
-            },
          playback: {
                 playInline: true,
                     hlsjsConfig: {
                         liveSyncDurationCount: 7,
                         loader: engine.createLoaderClass()
                     }
-                }
+                 },
+		events: {
+              //onError: function(e) { errorPlaying() }
+            },
             });
 p2pml.hlsjs.initClapprPlayer(player);
 player.on(Clappr.Events.PLAYER_STOP, playerStop);
