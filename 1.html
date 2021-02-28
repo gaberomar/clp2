@@ -52,8 +52,8 @@ var sv = getParam("sv");
             liveSyncDuration: 5,
                         }
                      },
-            events: {
-              //onError: function(e) { errorPlaying() }
+           events: {
+              onError: function(e) { errorPlaying() }
             },
             errorPlugin: {
             timeToExpires: 2,
