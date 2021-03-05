@@ -67,41 +67,25 @@ player = new Clappr.Player({
             events: {
               //onError: function(e) { errorPlaying() }
             },
-                playback: {
-
-		 playback: {
-
-              playInline: true,
-                   html5: true,
- 
-                hlsjsConfig: {
- 
-                   maxBufferSize: 0,
-    
-                    maxBufferLength: 10,
-   
-                    liveSyncDurationCount: 10, 
-
-                    // Other hlsjsConfig options provided by hls.js
- 
-                    p2pConfig: {
- 
+	    playback: {
+            playInline: true,
+            html5: true,
+            hlsjsConfig: {
+            maxBufferSize: 0,
+            maxBufferLength: 10,
+            liveSyncDurationCount: 10, 
+                // Other hlsjsConfig options provided by hls.js
+                  p2pConfig: {
                  logLevel: 'debug',
-
                       live: true,
- 
         	announce: "https://tracker.hdtvcloud.com/v1", 
-            
-         }
- 
-               }
-  }
- 
+                   }
+                }
              }, 
               
 	errorPlugin: {
        timeToExpires: 2,
-      onRetry: function(e) {
+       onRetry: function(e) {
        player.configure({
         source: sv,
         autoPlay: true,
