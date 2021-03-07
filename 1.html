@@ -89,8 +89,12 @@ var servs = ["188.166.156.228" ,"167.99.255.136" ,"157.230.116.157" ,"161.35.217
 				 }
 				},
 				maxBufferLength: "20",
-				parentId: "#video-container"
-
+				parentId: "#video-container",
+                                 p2pConfig: {
+                               logLevel: 'debug',
+                                   live: true,
+         	               announce: "https://tracker.hdtvcloud.com/v1",       
+                                     },
                                     }); 
 
   				function resizePlayer(){
