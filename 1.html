@@ -77,16 +77,19 @@ function gUlrmRettp() {
 
          var player = new Clappr.Player({
                  source: sv,
-                 mediacontrol: {
+                 parentId: "#player",
+                 height: '100%',
+                 width: '100%',
+                 autoPlay: true,
+                 mute: false,
+		 hideVolumeBar: true,
+		 position: "bottom-left",   
+                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
+                  mediacontrol: {
                  seekbar: "#ff0000",
                  buttons: "#ff0000"
                    },
-                 height: '100%',
-                 width: '100%',
-                 parentId: "#player",
-                 mute: false,
-                 autoPlay: true,
-                 plugins: [LevelSelector, CDNByeClapprPlugin, ErrorPlugin, Clappr.FlasHLS], 
+		 plugins: [LevelSelector, CDNByeClapprPlugin, ErrorPlugin, Clappr.FlasHLS], 
                  playback: {
                  playInline: true,
                  hlsjsConfig: {
