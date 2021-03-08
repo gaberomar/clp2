@@ -81,7 +81,6 @@ var getQueryString = function ( field, url ) {
     var string = reg.exec(href);
     return string ? string[1] : null;
 };
-var topVideo = getQueryString('sv');
           var player = new Clappr.Player({
                  source: sv,
 		 plugins: [LevelSelector, CDNByeClapprPlugin, ErrorPlugin, Clappr.FlasHLS], 
