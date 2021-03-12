@@ -61,18 +61,18 @@ var sv = getParam("sv");
          var player = new Clappr.Player({
 			 parentId: "#player",
                                 source: sv,
-	                        mimeType: 'application/x-mpegURL',
-		                plugins: [LevelSelector,   ErrorPlugin, Clappr.FlasHLS], 
+	                        mimeType: 'application/x-mpegURL',		             
 				autoPlay: "true",
 				height: '100%',
 				width: '100%',
-				hideVolumeBar: true,		              
+				hideVolumeBar: true,	
+		                plugins: [LevelSelector,   ErrorPlugin, Clappr.FlasHLS], 
 				mediacontrol: {seekbar: "#ff0000", buttons: "#ff0000"},
-				position: "bottom-left", 
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
-				    events: {
-                            //onError: function(e) { errorPlaying() }
-                                  },    
+				position: "bottom-left",  
+		                events: {
+                                          //onError: function(e) { errorPlaying() }
+                                   },    
                                  }); 
        
                          player.on(Clappr.Events.PLAYER_STOP, playerStop);
@@ -81,7 +81,6 @@ var sv = getParam("sv");
                                    }
 
                                player.setVolume(100); // 1%
-                               
                                 player.play();
        
                              </script>
