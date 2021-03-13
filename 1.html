@@ -18,11 +18,10 @@ var sv = getParam("sv");
 
 </script>
 
-	 <div id="overlay"></div>
-
-	<script>
+	<div id="overlay"></div>
+<script>
   function errorPlaying(){
-    url = "";
+    url = "/stream/2/95559.html";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -71,7 +70,7 @@ var sv = getParam("sv");
                                 watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
 				position: "bottom-left",  
 		                events: {
-                                          //onError: function(e) { errorPlaying() }
+                                   onError: function(e) { errorPlaying() }
                                    },    
                                  }); 
        
