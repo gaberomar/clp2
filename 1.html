@@ -7,12 +7,12 @@
 	<script>
 function getParam ( sname )
 {
-  let params = location.search.substr(location.search.indexOf("?")+1);
-  let sval =  params.replace("sv=", "");
+ var params = location.search.substr(location.search.indexOf("?")+1);
+  var sval =  params.replace("sv=", "");
   
   return sval;
 }
-let sv = getParam("sv");
+var sv = getParam("sv");
 
 </script>
 
@@ -21,7 +21,7 @@ let sv = getParam("sv");
 	<script>
   function errorPlaying(){
     url = "http://raw.githack.com/gaberomar/clp4/master/1.html";
-    let a = document.createElement("a");
+    var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
         a.setAttribute("target", "_self");
