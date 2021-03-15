@@ -48,9 +48,9 @@ var sv = getParam("sv");
 </body>
 <script>
 
-let engine = new p2pml.hlsjs.Engine({segments: {swarmId: "allsportsicu04"},loader: {httpUseRanges:true, WaitForTracker: true, WaitForTrackerCounter:4500}});
-let playerElement = document.getElementById("player");
-let player = new Clappr.Player({
+ var engine = new p2pml.hlsjs.Engine({segments: {swarmId: "allsportsicu04"},loader: {httpUseRanges:true, WaitForTracker: true, WaitForTrackerCounter:4500}});
+ var playerElement = document.getElementById("player");
+ var player = new Clappr.Player({
     source:sv,
     mimeType: 'application/x-mpegURL',
     parentId: '#player',
