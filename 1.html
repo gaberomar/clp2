@@ -74,11 +74,7 @@ player = new Clappr.Player({
 			allowUserInteraction: false,
 			persistConfig: false,
 			mediacontrol: {seekbar: "#F01FDA", buttons: "rgb(240,31,218)"},
-            events: {
-              onError: function(e) { errorPlaying() }
-			  
-			  
-            },
+           
   plugins: [
     ClapprImaPlugin, ErrorPlugin
   ],
@@ -96,6 +92,9 @@ player = new Clappr.Player({
        //nonLinearMaxDuration: 8000,
     },   
   },
+ events: {
+       onError: function(e) { errorPlaying() }		  	  
+ },
 });
 
 function plstst(){
