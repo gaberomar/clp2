@@ -93,15 +93,15 @@ player = new Clappr.Player({
        //locale: 'fr',
        //maxDuration: 30000,
        //nonLinearMaxDuration: 8000,
-    },   
-  },
-events: {	
-onError: function (e) 
-{ 
-errbox();
- },  
+           },   
+         },
+       events: {	
+    onError: function (e) 
+         { 
+       errbox();
+       },  
       }
-});
+    });
 
 function plstst(){
 		var ua = navigator.userAgent.toLowerCase();
@@ -130,7 +130,6 @@ player.on(Clappr.Events.PLAYER_STOP, playerStop);
   
   
   </script>
-
 
  <div id="overlay"></div>
       <script>
