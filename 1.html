@@ -7,8 +7,8 @@
 --></style>	
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
 <style> .video-js {width: 100%; height: 100%;} #videojs {width: 100%; height: 100%;}</style></head>
-	<meta charset="utf-8">
-	 <meta name="referrer" content="no-referrer">
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
 function getParam ( sname )
@@ -21,10 +21,10 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+	
+<div id="overlay"></div>
 
-	 <div id="overlay"></div>
-
-	<script>
+<script>
   function errorPlaying(){
     url = "";
     var a = document.createElement("a");
@@ -134,8 +134,11 @@ player.on(Clappr.Events.PLAYER_STOP, playerStop);
               document.write("Not supported :("); 
   
   </script>
-
+	
+ <div id="overlay"></div>
+	
       <script>
+	      
   function errorPlaying(){
     url = "";
     var a = document.createElement("a");
