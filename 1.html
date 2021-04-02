@@ -105,7 +105,10 @@ player = new Clappr.Player({
                  events: {
               onError: function(e) { errorPlaying() },			  		  
             },
-       
+       plugins: [
+       ClapprImaPlugin, ErrorPlugin
+            ],
+  
          });
 
 function plstst(){
