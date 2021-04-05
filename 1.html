@@ -132,7 +132,9 @@ player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
                } 
-           } 
+  player.setVolume(100); // 1%
+               player.play();
+  }
   </script>
 
 <script>
