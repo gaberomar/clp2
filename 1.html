@@ -90,19 +90,17 @@ player = new Clappr.Player({
 	loop: true, 
         height: '100%',
         width: '100%',
-	playback: {
-        playInline: 'playsinline'
-            },
-	//plugins: {'core': [LevelSelector]},  
         parentId: '#vid',
 	watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 				
 	position: 'bottom-left',
-	watermarkLink: 'http://www.koraglive.cf',
 	allowUserInteraction: false,
 	persistConfig: false,
 	mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
                  events: {
               onError: function(e) { errorPlaying() },			  		  
+            },
+	playback: {
+        playInline: 'playsinline'
             },
        plugins: [
        ClapprImaPlugin, ErrorPlugin
