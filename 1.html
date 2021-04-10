@@ -99,11 +99,13 @@ player = new Clappr.Player({
                  events: {
               onError: function(e) { errorPlaying() },			  		  
             },
+	
+	 plugins: {'core': [ClapprImaPlugin]},
 	playback: {
         playInline: 'playsinline'
             },
        plugins: [
-       ClapprImaPlugin, ErrorPlugin
+      ErrorPlugin
             ],
   
          });
