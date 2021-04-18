@@ -61,7 +61,6 @@ var sv = getParam("sv");
   <script>
 player = new Clappr.Player({
            source: sv,
-	   parentId: '#vid',
 	   fullscreen: false,
             mimeType: 'application/x-mpegURL',
             autoPlay: true, 
@@ -74,7 +73,7 @@ player = new Clappr.Player({
       playInline: 'playsinline'
     },
 			//plugins: {'core': [LevelSelector]},  
-                            
+                           parentId: '#vid',  
 			watermark: 'http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png',
 			poster: '/img/background4.png',
 			position: 'bottom-left',
@@ -124,10 +123,6 @@ player.core.mediaControl.toggleFullscreen();
 }
 setTimeout(plstst, 39000);
 
-
-  
-
-  
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
                function playerStop(){
                location.reload();
