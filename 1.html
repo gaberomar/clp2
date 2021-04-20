@@ -18,9 +18,10 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+<div id="overlay"></div>
 <script>
   function errorPlaying(){
-    url = "/stream/6/98357.html";
+    url = "";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -33,6 +34,7 @@ var sv = getParam("sv");
     }
 
   }
+
 
 </script>
 
@@ -85,13 +87,10 @@ var sv = getParam("sv");
 			allowUserInteraction: false,
 			persistConfig: false,
  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"}, 
-
-			events     :
-			{
-    			onError: function(e) {
-					errorPlaying();
-				},
-
+  events: {
+              onError: function(e) { errorPlaying() }
+           },
+			
 				onPlay : function(e){
 					setTimeout( function(){ $( ".stream-logo").fadeOut() }, 1000 );
 					if( !videoStarted )
