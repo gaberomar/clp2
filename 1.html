@@ -87,8 +87,9 @@ var sv = getParam("sv");
 			allowUserInteraction: false,
 			persistConfig: false,
  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"}, 
-  events: {
-              onError: function(e) { errorPlaying() }
+ events: {
+              onError: function(e) { 
+              errorPlaying()
            },
 			
 				onPlay : function(e){
