@@ -116,10 +116,10 @@ var sv = getParam("sv");
                 width: '100%',
                 parentId: "#vid",
                 hideVolumeBar: true, 
+	        plugins: {'core': [ ClapprImaPlugin]},
   watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
 		    position  : "bottom-left",
  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
-  plugins: {'core': [ ClapprImaPlugin]},
  events: {
               onError: function(e) { errorPlaying()}
                                 },
