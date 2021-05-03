@@ -34,13 +34,12 @@ player = new Clappr.Player({
             hideVolumeBar: true,
             height: '100%',
             width: '100%',
-  watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
-		    position  : "bottom-left",
-		  	 mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
-			allowUserInteraction: false,
- plugins: {'core': [ ClapprImaPlugin]},
-			persistConfig: false,
- 
+	    plugins: {'core': [ ClapprImaPlugin]},
+	    mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
+	    watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
+	    position  : "bottom-left",
+	    allowUserInteraction: false,
+	    persistConfig: false,
             events: {
               onError: function(e) { 
                 setTimeout(function(){
