@@ -1,5 +1,6 @@
 
 
+
 <html>
 <head>
 <style> video {object-fit:fill}</style><style>html,body{margin:0;}</style>
@@ -26,9 +27,9 @@ var sv = getParam("sv");
 <script type="1126e12c05e649c436a3db9f-text/javascript">
 //<![CDATA[ 
            player = new Clappr.Player({
-	   url:"http://www.koraglive.cf", 
-	   embed:"http://www.koraglive.cf",
-            source: sv,
+           url:"http://www.koraglive.cf", 
+           embed:"http://www.koraglive.cf",
+            source: "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
             parentId: "#player",
             mimeType: "application/x-mpegURL",
             autoPlay: true, 
@@ -36,12 +37,12 @@ var sv = getParam("sv");
             hideVolumeBar: true,
             height: '100%',
             width: '100%',
-            plugins: {'core': [ ClapprImaPlugin]},
+             plugins: {'core': [ ClapprImaPlugin]},   
             mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
             watermark  : "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png",
-            position  : "bottom-left",
-            allowUserInteraction: false,
-            persistConfig: false,
+            position  : "bottom-left",  
+           allowUserInteraction: false,
+            persistConfig: false,   
             events: {
             onError: function(e) { 
             setTimeout(function(){
@@ -50,11 +51,14 @@ var sv = getParam("sv");
                 },1000)
               }
             },
-            playback: {
             hlsjsConfig: {
-            liveSyncDuration: 10
+		xhrSetup: function(xhr, url) {
+		xhr.withCredentials = false;
+		}
+	},
+	playbackConfig: {
+		crossorigin: 'use-credentials'
               }
-            } 
          });
 
   player.on(Clappr.Events.PLAYER_STOP, playerStop);
