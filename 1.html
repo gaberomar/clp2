@@ -89,24 +89,25 @@ var sv = getParam("sv");
    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
    <link href="https://easysite.one/z/js/player/clapper/RaiPremium/clappr.css" rel="stylesheet" type="text/css" media="screen">
+
 </head>
   <body style="margin: 0px; padding: 0px">
  <div id="player" style="width:100%;height:100%;"></div>
   <div id="error-message"><h2>Canale Offline</h2><p>Secondi ... <span>10</span> موقع: كوره جي لايف</p></div>
   <script>var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
- player = new Clappr.Player({
-            source: sv,
-            parentId: "#player",
-            height: '100%',
-            width: '100%',
-            autoPlay: true, 
-            mute:startMuted(),
-            hideVolumeBar: true,
-            mimeType: "application/x-mpegURL",
-            plugins:  [ ClapprImaPlugin],
-            mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
-            watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
-            position  : "bottom-left",
+  player=new Clappr.Player
+  ({parentId:"#Player",source: sv,
+  autoPlay:true,
+  mute:startMuted(),
+  width:"100%",
+  height:"100%", 
+  stretching:"uniform", 
+  mimeType:"application/x-mpegURL", 
+  hideVolumeBar: true, 
+  watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
+  position  : "bottom-left",
+  mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
+  plugins:  [ ClapprImaPlugin],
 events:{onError:function(e){playError()},
 onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},
 onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}
