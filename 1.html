@@ -1,8 +1,10 @@
 
 
 
+
+
 <html>
-<style>		    						
+ <style>		    						
 body {
 margin:0px;
 background-color: #000;
@@ -83,53 +85,39 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+ <script src="https://easysite.one/z/js/player/clapper/RaiPremium/jquery.min.js" type="text/javascript"></script>
+   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
 
-   <script src="https://easysite.one/z/js/player/clapper/RaiPremium/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js' type="text/javascript"></script>
-
-<body>
-		<center>
-		<div id="player" style="width:100%;height:100%;"></div>
-		</center>
-	
-		<script>
-           player = new Clappr.Player({
+</head>
+  <body style="margin: 0px; padding: 0px">
+ <div id="player" style="width:100%;height:100%;"></div>
+  <div id="error-message"><h2>Canale Offline</h2><p>Secondi ... <span>10</span> موقع: كوره جي لايف</p></div>
+  <script>var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
+ player = new Clappr.Player({
             source: sv,
             parentId: "#player",
-            mimeType: "application/x-mpegURL",
-            autoPlay: true, 
-            stretching:"startMuted()", 
-            hideVolumeBar: true,
             height: '100%',
             width: '100%',
-            stretching:"uniform", 
-            plugins: {'core': [ ClapprImaPlugin]},
+            autoPlay: true, 
+            mute:startMuted(),
+            hideVolumeBar: true,
+            mimeType: "application/x-mpegURL",
             mediacontrol: {seekbar: "#FF00FF", buttons: "rgb(255,0,255)"},
-             watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
+            watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
             position  : "bottom-left",
-            allowUserInteraction: false,
-            persistConfig: false,
-           hlsjsConfig: {
-          xhrSetup: function(xhr, url) {
-          xhr.withCredentials = false;
-		}
-	},
-         });
-
-  player.on(Clappr.Events.PLAYER_STOP, playerStop);
-               function playerStop(){
-               location.reload();
-                }
-               player.setVolume(100); // 1%
-
-
-	</script> 
-		
-
-</center>
+            plugins:  [ ClapprImaPlugin],
+events:{onError:function(e){playError()},
+onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},
+onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}
+else{
+unmuteBtn.style.display="block"}}},
+});
+  function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
+  player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
+  var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
   
-<style>
+ <style>
 * {
   margin: 0;
   padding: 0;
@@ -277,5 +265,11 @@ textarea {
 }
 /* ]]> */
 </style>
+
 </body>
 </html>
+
+
+
+
+
