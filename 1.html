@@ -3,69 +3,7 @@
 
 
 
-<html>
- <style>		    						
-body {
-margin:0px;
-background-color: #000;
-max-width: 1980px;
-
-}
-body,td,th {
-font-size: 9pt;
-font-family: Verdana, Arial, Helvetica, sans-serif;
-color: #fff;
-}
-#navbar-iframe{
-height: 0px;
-visibility: hidden;
-display: none;
-}
-
-.app {
-  background-color: red;
-  color: black;
-  padding-right: 4px;
-  padding-left: 4px;
-  text-align: center;
-  
-} 
-
- #link2
- { color: white;
- text-decoration: none;
-     
- }
-
-a:link    {text-decoration: none; color: yellow;}
-a:visited {text-decoration: none; color: yellow;}
-a:hover   {color: green;}
-
-.h2 {
-  background-color: #242424;
-  color: white;
-  font-size: 25pt;
-  text-align: center;
-  
-} 
-
-.h1 {
-  background:white;
-  color: #ffffff;
-  font-size: 35pt;
-  text-align: center;
-  
-} 
-
-.vpn {
-  background:white;
-  color: #ffffff;
-  font-size: 35pt;
-  text-align: center;
-  
-} 
-</style>
-<head>
+ <html><head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Expires" content="0" /> 
@@ -85,39 +23,55 @@ function getParam ( sname )
 var sv = getParam("sv");
 
 </script>
+
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
-  
-</head>
+</head>	
+
   <body style="margin: 0px; padding: 0px">
  <div id="player" style="width:100%;height:100%;"></div>
-  <div id="error-message"><h2>Canale Offline</h2><p>Secondi ... <span>10</span> موقع: كوره جي لايف</p></div>
-  <script>var player,initialDelay=11,timer,unmuteBtn=document.getElementById("unmute");
-  player=new Clappr.Player
-  ({parentId:"#Player",source: sv,
-  autoPlay:true,
-  mute:startMuted(),
-  width:"100%",
-  height:"100%", 
-  stretching:"uniform", 
-  mimeType:"application/x-mpegURL", 
-  hideVolumeBar: true, 
-  watermark  : "http://2.bp.blogspot.com/-OCYZC7_td70/YJbxdPLFWVI/AAAAAAAAM9E/2_ir6ToDvZk8PQQCScScUf1Ic5QVeQT7ACK4BGAYYCw/s1600/lg2.png",
-  position  : "bottom-left",
-  mediacontrol: {seekbar: "#0000ff", buttons: "rgb(0,0,255)"},
-  plugins:  [ ClapprImaPlugin],
-events:{onError:function(e){playError()},
-onReady:function(e){if(this.getVolume()==0){unmuteBtn.style.display="block"}},
-onVolumeUpdate:function(e){if(this.getVolume()>0){unmuteBtn.style.display="none"}
-else{
-unmuteBtn.style.display="block"}}},
-});
-  function playError(){var delay=initialDelay;clearInterval(timer);timer=setInterval(function(){var messageElement=document.getElementById("error-message");delay-=1;if(delay){messageElement.querySelector("span").innerHTML=delay;messageElement.style.display="block"}else{clearInterval(timer);messageElement.style.display="none";
-  player.stop();player.play()}},1000)}unmuteBtn.addEventListener("click",function(){player.unmute()});function startMuted(){var d=/constructor/i.test(window.HTMLElement)||(function(a){return a.toString()==="[object SafariRemoteNotification]"})(!window.safari||(typeof safari!=="undefined"&&safari.pushNotification));if(d){return true}
-  var c=!!window.chrome&&!!window.chrome.webstore;if(c&&getChromeVersion()>=66){return true}return false}function getChromeVersion(){var a=navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);return a?parseInt(a[2],10):false};</script>
-  
- <style>
+
+<script>	
+var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&?#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+};
+
+ var player = new Clappr.Player({
+   source: sv,
+  mimeType: 'application/x-mpegURL',
+   autoPlay:true,  
+   parentId: "#player",
+    mute: "startMuted()",
+   hideVolumeBar: true,
+   height: '100%',
+   width: '100%', 
+   stretching:"uniform", 
+   position: "bottom-left",   
+   watermark: "http://1.bp.blogspot.com/-6Utq5JU_l2w/YCAo8gB0x7I/AAAAAAAALZU/YJxOQHkvIywpU4znsCgYEvIsc-U8ijY1wCK4BGAYYCw/s1600/2.png", 
+    mediacontrol: {seekbar: "#fbe407", buttons: "#fbe407"}, 
+    plugins:  [ ClapprImaPlugin],
+       playback: {
+            hlsjsConfig: {
+            liveSyncDuration: 10,
+              }
+            } 
+            });
+
+ player.on(Clappr.Events.PLAYER_STOP, playerStop);
+               function playerStop(){
+               location.reload();
+                }
+    
+               player.setVolume(100); // 1%
+               player.play();
+   	
+    </script>
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -265,11 +219,7 @@ textarea {
 }
 /* ]]> */
 </style>
-
 </body>
 </html>
-
-
-
 
 
