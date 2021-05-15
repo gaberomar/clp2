@@ -117,9 +117,7 @@ var ErrorPlugin=Clappr.ContainerPlugin.extend({name:"error_plugin",background:"d
 			persistConfig: false,
 			mediacontrol: {seekbar: "#ffffff", buttons: "rgb(240,218,4)"},
             events: {
-              onError: function(e) { errorPlaying() },
-			  
-			  
+              onError: function(e) { errorPlaying() },	  
             },
   plugins: [
     ClapprImaPlugin, ErrorPlugin
