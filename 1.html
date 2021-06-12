@@ -91,11 +91,11 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 
 <div id="vid" class="embed-responsive-item"></div>
 <script type="bdb38791070e20a1557590ca-text/javascript">
-player = new Clappr.Player({
-            player = new Clappr.Player({
-	    url:"https://live-sport24.com/onlineplayer.php?stream_id=2375546", 
-	    embed:"https://live-sport24.com/onlineplayer.php?stream_id=2375546",   
-	    source: sv,
+ player=new Clappr.Player({ parentId: "#vid", 
+  url:"https://live-sport24.com/onlineplayer.php?stream_id=2375546", 
+  embed:"https://live-sport24.com/onlineplayer.php?stream_id=2375546",   
+  source: sv,
+  mimeType:"application/x-mpegURL",
             mimeType: "application/x-mpegURL",
             autoPlay: true, 
             mute: 'startMuted()',
@@ -105,7 +105,6 @@ player = new Clappr.Player({
              mediacontrol: {seekbar: "#0000FF", buttons: "#fff"},
             watermark: "https://1.bp.blogspot.com/-RcWqkcNhNGE/YMP0d3OEG2I/AAAAAAAAM_s/8enH55tThiQ6Db9EbpyVmyxjaW4Z1BEuACLcBGAsYHQ/s300-rw-e90-w300/tv1.png", position : "bottom-left",             
             plugins: {'core':  [ ClapprImaPlugin]},   
-            parentId: "#vid",
              hideMediaControl:  true,
             events: {
               onError: function(e) { 
