@@ -1,5 +1,31 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="bdb38791070e20a1557590ca-text/javascript">
 function getParam ( sname )
 {
@@ -43,6 +69,10 @@ a:hover{color:green}
 <!--[if lt IE 9]>
 <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+<meta name="referrer" content="none">
+<script type="bdb38791070e20a1557590ca-text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
 
 <script type="bdb38791070e20a1557590ca-text/javascript">
 //<![CDATA[
@@ -64,12 +94,11 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 
 </head>
 
-	
 <body style="margin:0px;padding:0px;overflow:hidden">
 <div id="overlay"></div>
 <script type="bdb38791070e20a1557590ca-text/javascript">
   function errorPlaying(){
-    url = "/stream/5/107955.html";
+    url = "";
     var a = document.createElement("a");
     if (a.click) {
         a.setAttribute("href", url);
@@ -85,10 +114,6 @@ html{font-family:Verdana,Arial,Helvetica,sans-serif}
 
 
 </script>
-<meta name="referrer" content="none">
-<script type="bdb38791070e20a1557590ca-text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script type="bdb38791070e20a1557590ca-text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-ima-plugin@latest/dist/clappr-ima-plugin.min.js"></script>
 
 <div id="vid" class="embed-responsive-item"></div>
 <script type="bdb38791070e20a1557590ca-text/javascript">
@@ -96,15 +121,15 @@ player = new Clappr.Player({
             source: sv,
             mimeType: "application/x-mpegURL",
             autoPlay: true, 
-            mute: true, 
+            mute: 'startMuted()',
             height: '100%',
             width: '100%',
-            hideVolumeBar: true,
+             hideVolumeBar: true,
              mediacontrol: {seekbar: "#0000FF", buttons: "#fff"},
         watermark: "https://lh3.googleusercontent.com/-5bhsYho0GoY/YMCAC3YCkRI/AAAAAAAAM_Q/E6CI6PqCi2osg4SCkWdfMjphZjBwxo3bgCLcBGAsYHQ/s300-rw-e90-w300/plg.png", position : "bottom-left",       
             plugins: {'core': [ ClapprImaPlugin]},  
             parentId: "#vid",
-            hideMediaControl:  true,
+             hideMediaControl:  true,
             events: {
               onError: function(e) { 
                 setTimeout(function(){
@@ -286,7 +311,3 @@ function play(link){if(link.indexOf('.html')!=-1){var xmlhttp=new XMLHttpRequest
 //]]>
 </script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="bdb38791070e20a1557590ca-|49" defer=""></script> 
-
-</body>
-
- 
